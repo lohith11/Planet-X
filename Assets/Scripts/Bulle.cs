@@ -10,7 +10,7 @@ public class Bulle : MonoBehaviour
 
     Player1 target;
     Vector2 moveDirection;
-    // Start is called before the first frame update
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,11 +25,11 @@ public class Bulle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             this.gameObject.SetActive(false);
+            Player1.Instance.health -= 100;
         }
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
