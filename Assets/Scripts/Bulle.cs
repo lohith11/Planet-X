@@ -20,14 +20,7 @@ public class Bulle : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.name.Equals("Player1"))
-            {
-            Debug.Log("Hit");
-            Destroy(gameObject);
-            }
-    }
+    
 
     // Update is called once per frame
     void Update()
