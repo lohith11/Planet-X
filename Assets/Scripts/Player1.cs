@@ -37,5 +37,13 @@ public class Player1 : MonoBehaviour
         rb.angularVelocity = 0f;
         rb.isKinematic = false;
     }
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name=="Bullet(clone)")
+        {
+            this.gameObject.SetActive(false);
+        }
+        
+    }
+
 }
