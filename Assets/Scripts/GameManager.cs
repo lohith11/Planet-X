@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     void onDrag()
     {
-        
+        //Time.timeScale = 1f;
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         Distance = Vector2.Distance(startPoint, endPoint);
         direction = (startPoint - endPoint).normalized;
@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     void onDragEnd()
     {
+        Time.timeScale = 1f;
         player.ActivateRb();
         player.push(force);
         trajectory.Hide();
