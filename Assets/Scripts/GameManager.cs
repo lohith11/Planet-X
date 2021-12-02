@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
 
     void onDrag()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0.5f;
         endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
         Distance = Vector2.Distance(startPoint, endPoint);
         direction = (startPoint - endPoint).normalized;
