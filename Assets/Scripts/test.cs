@@ -4,25 +4,15 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-<<<<<<< Updated upstream
-    // Start is called before the first frame update
-=======
     public float enemyHealth = 100f;
     public float DamageTaken;
 
     
->>>>>>> Stashed changes
     void Start()
     {
         
     }
 
-<<<<<<< Updated upstream
-    // Update is called once per frame
-    void Update()
-    {
-        
-=======
 
     void Update()
     {
@@ -37,8 +27,9 @@ public class test : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            enemyHealth -= other.gameObject.GetComponent<Player1>().Damage;
+            float temp= other.gameObject.GetComponent<Player1>().Damage;
+            Debug.Log(temp);
+            enemyHealth -=temp;
         }
->>>>>>> Stashed changes
     }
 }

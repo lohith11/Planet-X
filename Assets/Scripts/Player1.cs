@@ -27,10 +27,12 @@ public class Player1 : MonoBehaviour
     public Transform rayPoint;
     public float rayDistance = 2f;
     [SerializeField] bool fallDamage = false;
-
     [SerializeField]
     public float health = 500f;
     public float Damage;
+    public int coins;
+    [Range(0.05f, 0.1f)]
+    public float Damagemultiplier = 0.05f;
 
     public Vector3 position
     {
@@ -70,10 +72,6 @@ public class Player1 : MonoBehaviour
 
         }
 
-        // if(other.gameObject.CompareTag("Enemy"))
-        // {
-        //     other.gameObject.SetActive(false);
-        // }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -108,13 +106,11 @@ public class Player1 : MonoBehaviour
     {
         float velocity = rb.velocity.magnitude;
        // Debug.Log(force);
-        Damage = velocity * force.magnitude;
+        Damage = velocity * force.magnitude * Damagemultiplier ;
+        Damage = Mathf.Clamp(Damage, 0, 100);
         Debug.Log("Damage : " + Damage);
 
     }
-
-   
-
 
 
 }
