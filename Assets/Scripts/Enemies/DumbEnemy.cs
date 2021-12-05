@@ -9,6 +9,8 @@ public class DumbEnemy : MonoBehaviour
 
     [SerializeField]
     private Vector3[] positions;
+    public GameObject Waypoint1;
+    public GameObject waypoint2;
 
     private int index;
 
