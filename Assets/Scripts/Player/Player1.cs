@@ -28,12 +28,10 @@ public class Player1 : MonoBehaviour
     public float rayDistance = 2f;
     [SerializeField] bool fallDamage = false;
    
-    public int coins;
-
     [Header("Player Stats")]
 
-    [Range(0.05f, 0.1f)]
-    public float Damagemultiplier = 0.05f;
+    [Range(0.02f, 0.1f)]
+    public float Damagemultiplier = 0.02f;
     public float health = 500f;
     public float Damage;
 
@@ -105,7 +103,6 @@ public class Player1 : MonoBehaviour
         rb.angularVelocity = 0f;
         rb.isKinematic = false;
     }
-
 
 
 }
