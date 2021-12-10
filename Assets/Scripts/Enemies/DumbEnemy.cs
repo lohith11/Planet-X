@@ -5,38 +5,66 @@ using UnityEngine;
 public class DumbEnemy : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    Transform[] waypoints;
 
     [SerializeField]
-    private Vector3[] positions;
-    public GameObject Waypoint1;
-    public GameObject waypoint2;
+    float movespeed = 2f;
 
-    private int index;
+    int waypointindex = 0;
 
-    Rigidbody2D rb;
-
-    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        transform.position = waypoints[waypointindex].transform.position;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, positions[index], Time.deltaTime * speed);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
 
-        if (transform.position == positions[index])
+        if(transform.position == waypoints [waypointindex].transform.position)
         {
-            if (index == positions.Length - 1)
-            {
-                index = 0;
-            }
-            else
-            {
-                index++;
-            }
+            waypointindex += 1;
+        }
+        if(waypointindex == waypoints.Length)
+        {
+            waypointindex = 0;
         }
     }
+
 }
+
+
+//[SerializeField]
+//private float speed;
+
+//[SerializeField]
+//private Vector3[] positions;
+//public GameObject Waypoint1;
+//public GameObject waypoint2;
+
+//private int index;
+
+//Rigidbody2D rb;
+
+//// Start is called before the first frame update
+//void Start()
+//{
+//    rb = GetComponent<Rigidbody2D>();
+//}
+
+//// Update is called once per frame
+//void Update()
+//{
+//    transform.position = Vector2.MoveTowards(transform.position, positions[index], Time.deltaTime * speed);
+
+//    if (transform.position == positions[index])
+//    {
+//        if (index == positions.Length - 1)
+//        {
+//            index = 0;
+//        }
+//        else
+//        {
+//            index++;
+//        }
+//    }
+//}
