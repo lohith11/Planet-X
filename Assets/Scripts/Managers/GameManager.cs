@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     Camera cam;
     public Trajectory trajectory; 
     public Player1 player; 
-    [SerializeField] float pushForce = 4f;
+    [SerializeField] float pushForce = 1f;
 
     bool isDragging = false;
 

@@ -27,12 +27,14 @@ public class Player1 : MonoBehaviour
     public Transform rayPoint;
     public float rayDistance = 2f;
     [SerializeField] bool fallDamage = false;
-    [SerializeField]
+   
+    [Header("Player Stats")]
+
+    [Range(0.02f, 0.1f)]
+    public float Damagemultiplier = 0.02f;
     public float health = 500f;
     public float Damage;
-    public int coins;
-    [Range(0.05f, 0.1f)]
-    public float Damagemultiplier = 0.05f;
+
 
     public Vector3 position
     {
@@ -45,6 +47,7 @@ public class Player1 : MonoBehaviour
     private void Update()
     {
         checkFallHeight();
+        healthBar.healthInstance.setHealth(health);
     }
 
     void checkFallHeight()
@@ -58,6 +61,15 @@ public class Player1 : MonoBehaviour
 
     }
 
+    void dealDamage(Vector2 force)
+    {
+        float velocity = rb.velocity.magnitude;
+        Damage = velocity * force.magnitude * Damagemultiplier ;
+        Damage = Mathf.Clamp(Damage, 0, 100);
+        Debug.Log("Damage : " + Damage);
+
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.transform.name == "Ground")
@@ -67,24 +79,14 @@ public class Player1 : MonoBehaviour
             {
                 fallDamage = false;
                 health -= 100;
-                Debug.Log(health);
             }
 
         }
 
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.transform.name == "Ground")
-        {
-            isGrounded = false;
-        }
-    }
-
+    
     public void push(Vector2 force)
     {
-        //Debug.Log("Pushed");
         rb.AddForce(force, ForceMode2D.Impulse);
         dealDamage(force);
 
@@ -100,16 +102,6 @@ public class Player1 : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0f;
         rb.isKinematic = false;
-    }
-
-    void dealDamage(Vector2 force)
-    {
-        float velocity = rb.velocity.magnitude;
-       // Debug.Log(force);
-        Damage = velocity * force.magnitude * Damagemultiplier ;
-        Damage = Mathf.Clamp(Damage, 0, 100);
-        Debug.Log("Damage : " + Damage);
-
     }
 
 

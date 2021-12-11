@@ -4,6 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class healthBar : MonoBehaviour
 {
+    public static healthBar healthInstance;
+    private void Awake()
+    {
+
+        if (healthInstance == null)
+        {
+            healthInstance = this;
+        }
+    }
+
     public Slider slider;
     Text healthText;
     public Gradient gradient;
@@ -13,19 +23,15 @@ public class healthBar : MonoBehaviour
     private void Start()
     {
         fill.color = gradient.Evaluate(1f);
-        slider.value = 500;
+        //slider.value = 500;
         healthText = GetComponentInChildren<Text>();
     }
     
     private void Update()
     {
-        
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            float lol = slider.value -= 10;
-            setHealth(lol);
-        }
+        // float lol = slider.value -= Player1.Instance.health;
+        // Debug.Log("From health bar : " + lol);
+        // setHealth(lol);
     }
     public void setHealth(float health)
     {
