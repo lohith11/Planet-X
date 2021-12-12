@@ -32,7 +32,7 @@ public class Player1 : MonoBehaviour
 
     [Range(0.02f, 0.1f)]
     public float Damagemultiplier = 0.02f;
-    public float health = 500f;
+    public float health = 100f;
     public float Damage;
 
 
@@ -48,6 +48,10 @@ public class Player1 : MonoBehaviour
     {
         checkFallHeight();
         healthBar.healthInstance.setHealth(health);
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            health -= 100f;
+        }
     }
 
     void checkFallHeight()
