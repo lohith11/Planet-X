@@ -42,6 +42,13 @@ public class Shooterguy : MonoBehaviour
             waypointindex = 0;
         }
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
 }
 //[SerializeField]
 //Transform[] waypoints;
