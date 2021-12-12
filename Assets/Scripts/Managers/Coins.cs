@@ -8,11 +8,11 @@ public class Coins : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("Player"))
-        {
+        //if (other.CompareTag("Player"))
+       // {
             print("Player collected " + coinValue + " coins!");
             ScoreManager.ScoreInstance.Addcoins(coinValue);
             Destroy(gameObject);
-        }   
+        //}   
     }
 }
