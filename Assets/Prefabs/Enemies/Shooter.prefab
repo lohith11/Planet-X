@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 5251024606304247339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.38, y: 4.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3141, y: 1.3141, z: 1.3141}
   m_Children:
   - {fileID: 5251024605336156607}
   m_Father: {fileID: 0}
@@ -128,8 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   movespeed: 2
-  speed: 0
-  range: 0
+  range: 2.46
   firerate: 1
-  bullet: {fileID: 0}
-  gun: {fileID: 0}
+  bullet: {fileID: 481517070281711121, guid: babbfbd753bab714cb4eace90dcc6799, type: 3}
+  gun: {fileID: 5251024605336156606}
