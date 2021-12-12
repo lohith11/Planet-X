@@ -30,17 +30,33 @@ public class Shooterguy : MonoBehaviour
     }
     void Update()
     {
-        //movement
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
+        float distancefromplayer = Vector2.Distance(player.position, transform.position);
+        //shooting
+        if (distancefromplayer <= range && nextfire < Time.time)
+        {
+            Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            nextfire = Time.time + firerate;
+        }
+        else
+        {
+            //movement
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
 
-        if (transform.position == waypoints[waypointindex].transform.position)
-        {
-            waypointindex += 1;
+            if (transform.position == waypoints[waypointindex].transform.position)
+            {
+                waypointindex += 1;
+            }
+            if (waypointindex == waypoints.Length)
+            {
+                waypointindex = 0;
+            }
+            
         }
-        if (waypointindex == waypoints.Length)
-        {
-            waypointindex = 0;
-        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
 //[SerializeField]
