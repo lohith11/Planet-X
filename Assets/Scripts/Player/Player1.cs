@@ -32,9 +32,9 @@ public class Player1 : MonoBehaviour
 
     [Range(0.02f, 0.1f)]
     public float Damagemultiplier = 0.02f;
-    public float health = 100f;
+    public float health;
     public float Damage;
-
+    public bool Dead = false;
 
     public Vector3 position
     {
@@ -48,9 +48,15 @@ public class Player1 : MonoBehaviour
     {
         checkFallHeight();
         healthBar.healthInstance.setHealth(health);
-        if(Input.GetKeyDown(KeyCode.Space))
+        // if(Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     health -= 100f;
+        // }
+
+        if(health <= 0)
         {
-            health -= 100f;
+            //Time.timeScale = 0f;
+            Dead = true;
         }
     }
 
@@ -85,6 +91,12 @@ public class Player1 : MonoBehaviour
                 health -= 100;
             }
 
+        }
+
+        if(other.collider.CompareTag("SmallBullet"))
+        {
+            Destroy(other.gameObject);
+            health -= 80;
         }
 
     }

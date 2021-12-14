@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class healthBar : MonoBehaviour
 {
     public static healthBar healthInstance;
@@ -29,9 +30,7 @@ public class healthBar : MonoBehaviour
     
     private void Update()
     {
-        // float lol = slider.value -= Player1.Instance.health;
-        // Debug.Log("From health bar : " + lol);
-        // setHealth(lol);
+        
     }
     public void setHealth(float health)
     {

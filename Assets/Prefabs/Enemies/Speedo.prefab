@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 3588777294770076362}
   - component: {fileID: 3588777294770076365}
   - component: {fileID: 3588777294770076364}
+  - component: {fileID: 1775110613}
   m_Layer: 0
   m_Name: Speedo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,3 +182,17 @@ MonoBehaviour:
   firerate: 1
   bullet: {fileID: 2345996078896748888, guid: fe4a6c1630f5f534da578bee76d3ac48, type: 3}
   gun: {fileID: 3588777293889068020}
+--- !u!114 &1775110613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3588777294770076353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbd0e11f51aa344ca3ba4e452c2c859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 100
+  DamageTaken: 0

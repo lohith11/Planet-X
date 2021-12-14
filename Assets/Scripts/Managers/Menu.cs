@@ -20,6 +20,11 @@ public class Menu : MonoBehaviour
                 Pause();
             }
         }
+
+        if(Player1.Instance.Dead)
+        {
+            EndGame();
+        }
     }
 
 
@@ -47,6 +52,12 @@ public class Menu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void EndGame()
+    {
+            Debug.Log("Player DED");
+            SceneManager.LoadScene("AfterGame");
     }
 }
 
