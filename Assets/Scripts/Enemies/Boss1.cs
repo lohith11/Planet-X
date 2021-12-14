@@ -6,7 +6,7 @@ public class Boss1 : MonoBehaviour
 {
     public float speed;
     public float range;
-    public float firerate = 5f;
+    public float firerate = 20f;
     public float nextfire;
     public GameObject bullet;
     public GameObject gun;
