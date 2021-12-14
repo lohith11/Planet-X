@@ -25,9 +25,12 @@ public class Boss1st : MonoBehaviour
 
     //Low Hp Enemy Spawn
     public float health;
-    public GameObject enemy;
-    float randomx;
-    Vector2 spawnloc;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
+    public GameObject enemy4;
+    public GameObject enemy5;
+    public GameObject enemy6;
 
     // Start is called before the first frame update
     void Start()
@@ -60,9 +63,16 @@ public class Boss1st : MonoBehaviour
             Instantiate(bullet, gun2.transform.position, Quaternion.identity);
             nextfire = Time.time + firerate;
         }
+        //Speedo Spawn
         if(health<=100)
         {
-            enemy.SetActive(true);
+            enemy1.SetActive(true);
+            enemy2.SetActive(true);
+            enemy3.SetActive(true);
+            enemy4.SetActive(true);
+            enemy5.SetActive(true);
+            enemy6.SetActive(true);
+
         }
     }
     private void OnDrawGizmosSelected()

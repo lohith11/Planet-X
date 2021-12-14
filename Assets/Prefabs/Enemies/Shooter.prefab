@@ -132,7 +132,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  movespeed: 2
+  movespeed: 5
   range: 6.39
   firerate: 0.5
   bullet: {fileID: 2345996078896748888, guid: fe4a6c1630f5f534da578bee76d3ac48, type: 3}
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 100
   DamageTaken: 0
+  blood: {fileID: 8321912319296647058, guid: 06ac9faadfe7e714383df662bc2341b4, type: 3}
 --- !u!61 &6416283570652825239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,4 +198,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

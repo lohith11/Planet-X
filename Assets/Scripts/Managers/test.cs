@@ -6,6 +6,7 @@ public class test : MonoBehaviour
 {
     public float enemyHealth = 100f;
     public float DamageTaken;
+    public GameObject blood;
 
     
     void Start()
@@ -27,6 +28,7 @@ public class test : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            Instantiate(blood);
             float temp= other.gameObject.GetComponent<Player1>().Damage;
             Debug.Log(temp);
             enemyHealth -=temp;
