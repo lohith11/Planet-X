@@ -23,6 +23,12 @@ public class Boss1st : MonoBehaviour
     public GameObject gun1;
     public GameObject gun2;
 
+    //Low Hp Enemy Spawn
+    public float health;
+    public GameObject enemy;
+    float randomx;
+    Vector2 spawnloc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +59,10 @@ public class Boss1st : MonoBehaviour
             nextfire = Time.time + firerate;
             Instantiate(bullet, gun2.transform.position, Quaternion.identity);
             nextfire = Time.time + firerate;
+        }
+        if(health<=100)
+        {
+            enemy.SetActive(true);
         }
     }
     private void OnDrawGizmosSelected()
