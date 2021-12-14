@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+
+    public static Menu Menuinstance;
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
+    public bool GotoNextscene = false;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -24,6 +27,11 @@ public class Menu : MonoBehaviour
         if(Player1.Instance.Dead)
         {
             EndGame();
+        }
+
+        if(GotoNextscene)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
@@ -56,8 +64,8 @@ public class Menu : MonoBehaviour
 
     public void EndGame()
     {
-            Debug.Log("Player DED");
-            SceneManager.LoadScene("AfterGame");
+        Debug.Log("Player DED");
+        SceneManager.LoadScene("Main Menu");
     }
 }
 

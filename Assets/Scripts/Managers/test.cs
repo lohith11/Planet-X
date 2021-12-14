@@ -6,20 +6,23 @@ public class test : MonoBehaviour
 {
     public float enemyHealth = 100f;
     public float DamageTaken;
-    public GameObject blood;
-
-    
-    void Start()
-    {
-        
-    }
+    bool IsDead = false;
+    public GameObject Coins;
+    int coinSpawn = 0;
 
 
     void Update()
     {
           if(enemyHealth <= 0)
         {
+            IsDead = true;
             Destroy(gameObject);
+        }
+
+        if(IsDead == true)
+        {
+            coinSpawn = Random.Range(1, 6);
+                Instantiate(Coins, transform.position, Quaternion.identity);
         }
 
     }
@@ -28,9 +31,8 @@ public class test : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Instantiate(blood);
             float temp= other.gameObject.GetComponent<Player1>().Damage;
-            Debug.Log(temp);
+
             enemyHealth -=temp;
         }
     }

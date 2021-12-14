@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 5bbd0e11f51aa344ca3ba4e452c2c859
+guid: 6df45eaa199275b45a3b8a731cf9349a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - Coins: {fileID: 7605629764980571680, guid: 9a21c7375db913b41960bc8e525939d4, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

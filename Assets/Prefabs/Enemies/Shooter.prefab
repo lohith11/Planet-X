@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 100
   DamageTaken: 0
-  blood: {fileID: 8321912319296647058, guid: 06ac9faadfe7e714383df662bc2341b4, type: 3}
+  Coins: {fileID: 7605629764980571680, guid: 9a21c7375db913b41960bc8e525939d4, type: 3}
 --- !u!61 &6416283570652825239
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,10 +165,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.0526133, y: 0.31766653}
+  m_Offset: {x: 0.39478958, y: 0.31766653}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    border: {x: 9.54, y: 2.77, z: 5.38, w: 2.2}
+    pivot: {x: 0.58397937, y: 0.49425772}
     oldSize: {x: 19.2, y: 10.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8345637, y: 5.3495846}
+  m_Size: {x: 4.3871517, y: 5.3495846}
   m_EdgeRadius: 0
 --- !u!50 &2067288114320952623
 Rigidbody2D:

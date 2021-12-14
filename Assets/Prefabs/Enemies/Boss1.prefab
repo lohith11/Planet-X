@@ -227,6 +227,8 @@ MonoBehaviour:
   enemy2: {fileID: 0}
   enemy3: {fileID: 0}
   enemy4: {fileID: 0}
+  enemy5: {fileID: 0}
+  enemy6: {fileID: 0}
 --- !u!114 &1739256063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,4 +243,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 100
   DamageTaken: 0
-  blood: {fileID: 0}
+  Coins: {fileID: 7605629764980571680, guid: 9a21c7375db913b41960bc8e525939d4, type: 3}

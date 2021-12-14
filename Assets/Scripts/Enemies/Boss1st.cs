@@ -35,7 +35,7 @@ public class Boss1st : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.position = waypoints[waypointindex].transform.position;
     }
 
