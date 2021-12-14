@@ -10,7 +10,6 @@ public class Shooterguy : MonoBehaviour
 
     [SerializeField]
     float movespeed = 2f;
-
     int waypointindex = 0;
 
     //shooting
@@ -30,16 +29,10 @@ public class Shooterguy : MonoBehaviour
     }
     void Update()
     {
-        float distancefromplayer = Vector2.Distance(player.position, transform.position);
-        //shooting
-        if (distancefromplayer <= range && nextfire < Time.time)
+
+            float distancefromplayer = Vector2.Distance(player.position, transform.position);
+        if(distancefromplayer>range)
         {
-            Instantiate(bullet, gun.transform.position, Quaternion.identity);
-            nextfire = Time.time + firerate;
-        }
-        else
-        {
-            //movement
             transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
 
             if (transform.position == waypoints[waypointindex].transform.position)
@@ -50,14 +43,23 @@ public class Shooterguy : MonoBehaviour
             {
                 waypointindex = 0;
             }
-            
         }
+        else if(distancefromplayer <= range && nextfire <Time.time)
+        {
+            Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            nextfire = Time.time + firerate;
+        }
+
+
+       
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }
 //[SerializeField]
 //Transform[] waypoints;

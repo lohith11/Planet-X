@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 664597886105161404}
   - component: {fileID: 664597886105161407}
   - component: {fileID: 664597886105161406}
+  - component: {fileID: 1164604140}
   m_Layer: 0
   m_Name: Dumbo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &664597886105161407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +145,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343e0f56e98263345b2961f71703a14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  positions:
-  - {x: 3.15, y: -1.2, z: 0}
-  - {x: 18.45, y: -1.2, z: 0}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  movespeed: 2
+--- !u!114 &1164604140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664597886105161401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbd0e11f51aa344ca3ba4e452c2c859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 100
+  DamageTaken: 0
+  Coins: {fileID: 7605629764980571680, guid: 9a21c7375db913b41960bc8e525939d4, type: 3}

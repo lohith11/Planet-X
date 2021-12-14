@@ -12,6 +12,8 @@ public class Coins : MonoBehaviour
         {
             print("Player collected " + coinValue + " coins!");
             ScoreManager.ScoreInstance.Addcoins(coinValue);
+
+            FindObjectOfType<AudioManager>().PlaySound("CoinPickup");
             Destroy(gameObject);
         }   
     }

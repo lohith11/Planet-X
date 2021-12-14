@@ -5,9 +5,8 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     public float speed;
-    public float lineofsight;
     public float range;
-    public float firerate = 5f;
+    public float firerate = 20f;
     public float nextfire;
     public GameObject bullet;
     public GameObject gun;
@@ -19,7 +18,7 @@ public class Boss1 : MonoBehaviour
     Transform[] waypoints;
 
     [SerializeField]
-    float movespeed = 3f;
+    float movespeed = 4f;
     int waypointindex;
     // Start is called before the first frame update
     void Start()
@@ -47,8 +46,7 @@ public class Boss1 : MonoBehaviour
             Instantiate(bullet, gun.transform.position, Quaternion.identity);
             nextfire = Time.time + firerate;
         }
-        else
-        {
+        
             //movement
             transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
 
@@ -61,18 +59,15 @@ public class Boss1 : MonoBehaviour
                 waypointindex = 0;
             }
 
-        }
-        var spawn=false;
-        if (bhealth <= 50&&spawn)
+        
+        if (bhealth <= 50)
         {
             for (int i = 0; i <= 5; i++)
             {
                 var position = new Vector3(Random.Range(67, 10), 0, Random.Range(47, 10.0f));
                 Instantiate(speedo, position, Quaternion.identity);
 
-            }
-            spawn = true;
-            
+            } 
         }
 
     }
