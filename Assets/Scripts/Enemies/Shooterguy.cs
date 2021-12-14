@@ -10,7 +10,6 @@ public class Shooterguy : MonoBehaviour
 
     [SerializeField]
     float movespeed = 2f;
-
     int waypointindex = 0;
 
     //shooting
@@ -34,16 +33,16 @@ public class Shooterguy : MonoBehaviour
             float distancefromplayer = Vector2.Distance(player.position, transform.position);
         if(distancefromplayer>range)
         {
-         transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
 
-         if (transform.position == waypoints[waypointindex].transform.position)
-         {
-             waypointindex += 1;
-         }
-         if (waypointindex == waypoints.Length)
-         {
-             waypointindex = 0;
-         }
+            if (transform.position == waypoints[waypointindex].transform.position)
+            {
+                waypointindex += 1;
+            }
+            if (waypointindex == waypoints.Length)
+            {
+                waypointindex = 0;
+            }
         }
         else if(distancefromplayer <= range && nextfire <Time.time)
         {
@@ -52,17 +51,7 @@ public class Shooterguy : MonoBehaviour
         }
 
 
-        //movement
-        // transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointindex].transform.position, movespeed * Time.deltaTime);
-
-        // if (transform.position == waypoints[waypointindex].transform.position)
-        // {
-        //     waypointindex += 1;
-        // }
-        // if (waypointindex == waypoints.Length)
-        // {
-        //     waypointindex = 0;
-        // }
+       
     }
 
     private void OnDrawGizmosSelected()
