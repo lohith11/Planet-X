@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-       // PlaySound("8BitBackground");
+       PlaySound("MainTheme");
     }
     public void PlaySound(string clipName)
     {
