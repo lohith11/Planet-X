@@ -65,7 +65,7 @@ public class Menu : MonoBehaviour
     public void EndGame()
     {
         Debug.Log("Player DED");
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("AfterGame");
     }
 }
 

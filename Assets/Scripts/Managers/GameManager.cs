@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     Camera cam;
     public Trajectory trajectory; 
     public Player1 player; 
+    public Animator PlayerAnim;
     [SerializeField] float pushForce = 1f;
 
     bool isDragging = false;
@@ -59,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     void onDragStart()
     {
+        PlayerAnim.SetBool("Jump", true);
+        PlayerAnim.SetBool("Walk", false);
         Time.timeScale = 0.5f;
         player.DeactivateRb();
         startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
 
     void onDragEnd()
     {
+        PlayerAnim.SetBool("Jump", false);
+        PlayerAnim.SetBool("Walk", true);
         Time.timeScale = 1f;
         player.ActivateRb();
         player.push(force);
