@@ -1264,6 +1264,12 @@ MonoBehaviour:
     volume: 0.863
     pitch: 1.524
     source: {fileID: 0}
+  - clipName: MainTheme
+    clip: {fileID: 8300000, guid: a51081a909494c3419bcd937b8fbd137, type: 3}
+    loop: 1
+    volume: 0.133
+    pitch: 1.524
+    source: {fileID: 0}
 --- !u!4 &199536681
 Transform:
   m_ObjectHideFlags: 0
